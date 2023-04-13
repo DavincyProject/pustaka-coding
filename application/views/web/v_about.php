@@ -15,9 +15,9 @@
     <ul type="none">
         <li>Jakarta</li>
     </ul>
-    <h4>Olah Raga Favorit</h4>
+    <h4>Hobi</h4>
     <ul type="square">
         <li>Game</li>
-        <li>Catur</li>
+        <li>Coding</li>
     </ul>
 </section>

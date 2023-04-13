@@ -60,6 +60,15 @@
         var namaError = document.getElementById("namaError");
         var sksError = document.getElementById("sksError");
 
+        kodeError.style.color = "red";
+        kodeError.style.fontWeight = "700";
+
+        namaError.style.color = "red";
+        namaError.style.fontWeight = "700";
+
+        sksError.style.color = "red";
+        sksError.style.fontWeight = "700";
+
         // Menghapus pesan error sebelumnya
         kodeError.innerHTML = "";
         namaError.innerHTML = "";
@@ -68,25 +77,25 @@
         // Validasi kode hanya mengandung huruf dan angka
         var kodeRegex = /^[0-9]+$/;
         if (kode === "") {
-            kodeError.innerHTML = "Harap isi Kode MTK.";
+            kodeError.innerHTML = "Harap isi Kode MTK!";
             return false;
         } else if (!kode.match(kodeRegex)) {
-            kodeError.innerHTML = "Kode MTK hanya boleh mengandung angka.";
+            kodeError.innerHTML = "Kode MTK hanya boleh mengandung angka!";
             return false;
         }
 
         // Validasi nama hanya mengandung huruf dan spasi
         var namaRegex = /^[a-zA-Z\s]+$/;
         if (nama === "") {
-            namaError.innerHTML = "Harap isi Nama MTK.";
+            namaError.innerHTML = "Harap isi Nama MTK!";
             return false;
         } else if (!nama.match(namaRegex)) {
-            namaError.innerHTML = "Nama MTK hanya boleh mengandung huruf dan spasi.";
+            namaError.innerHTML = "Nama MTK hanya boleh mengandung huruf dan spasi!";
             return false;
         }
 
         if (sks === "") {
-            sksError.innerHTML = "Harap pilih SKS.";
+            sksError.innerHTML = "Harap pilih SKS!";
             return false;
         }
 

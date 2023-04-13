@@ -24,4 +24,11 @@ class Web extends CI_Controller
         $this->load->view('v_about', $data);
         $this->load->view('v_footer', $data);
     }
+    public function form()
+    {
+        $data['judul'] = "Halaman Form";
+        $this->load->view('v_header', $data);
+        $this->load->view('v_form', $data);
+        $this->load->view('v_footer', $data);
+    }
 }

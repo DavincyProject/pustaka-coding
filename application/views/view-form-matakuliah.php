@@ -26,7 +26,7 @@
                     <th>Kode MTK</th>
                     <th>:</th>
                     <td>
-                        <input type="text" name="nama" id="nama">
+                        <input type="text" name="kode" id="kode">
                     </td>
                 </tr>
                 <tr>

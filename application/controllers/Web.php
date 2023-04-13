@@ -12,23 +12,36 @@ class Web extends CI_Controller
     public function index()
     {
         $data['judul'] = "Halaman Depan";
-        $this->load->view('v_header', $data);
-        $this->load->view('v_index', $data);
-        $this->load->view('v_footer', $data);
+        $this->load->view('web/templates/v_header', $data);
+        $this->load->view('web/v_index', $data);
+        $this->load->view('web/templates/v_footer', $data);
     }
 
     public function about()
     {
         $data['judul'] = "Halaman About";
-        $this->load->view('v_header', $data);
-        $this->load->view('v_about', $data);
-        $this->load->view('v_footer', $data);
+        $this->load->view('web/templates/v_header', $data);
+        $this->load->view('web/v_about', $data);
+        $this->load->view('web/templates/v_footer', $data);
     }
     public function form()
     {
         $data['judul'] = "Halaman Form";
-        $this->load->view('v_header', $data);
-        $this->load->view('v_form', $data);
-        $this->load->view('v_footer', $data);
+        $this->load->view('web/templates/v_header', $data);
+        $this->load->view('web/v_form', $data);
+        $this->load->view('web/templates/v_footer', $data);
+    }
+
+    public function data()
+    {
+        $data = [
+            'kode' => $this->input->post('kode'),
+            'nama' => $this->input->post('nama'),
+            'sks' => $this->input->post('sks')
+        ];
+        $data['judul'] = "Hasil Form";
+        $this->load->view('web/templates/v_header', $data);
+        $this->load->view('web/v_data', $data);
+        $this->load->view('web/templates/v_footer', $data);
     }
 }

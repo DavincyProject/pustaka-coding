@@ -89,8 +89,8 @@
         if (nama === "") {
             namaError.innerHTML = "Harap isi Nama MTK!";
             return false;
-        } else if (!nama.match(namaRegex)) {
-            namaError.innerHTML = "Nama MTK hanya boleh mengandung huruf dan spasi!";
+        } else if (!nama.match(namaRegex) || !nama.lenght < 4) {
+            namaError.innerHTML = "Nama MTK hanya boleh mengandung huruf dan spasi! dan karakter tidak boleh kurang dari 4!";
             return false;
         }
 

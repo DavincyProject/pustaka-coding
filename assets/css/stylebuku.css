@@ -58,3 +58,8 @@ footer a{
 section{
     padding: 20px;
 }
+
+.error {
+	color: red;
+	font-weight: bold;
+}

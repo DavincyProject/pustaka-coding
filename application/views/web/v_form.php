@@ -16,16 +16,16 @@
                     <th>Kode MTK</th>
                     <th>:</th>
                     <td>
-                        <input type="text" name="kode" id="kode"> <a id="kodeError" class="error"></a>
-
+                        <input type="text" name="kode" id="kode" value="<?php echo set_value('kode'); ?>">
+                        <?php echo form_error('kode', '<span class="error">', '</span>'); ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Nama MTK</th>
                     <th>:</th>
                     <td>
-                        <input type="text" name="nama" id="nama"><a id="namaError" class="error"></a>
-
+                        <input type="text" name="nama" id="nama" value="<?php echo set_value('nama'); ?>">
+                        <?php echo form_error('nama', '<span class="error">', '</span>'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -34,11 +34,11 @@
                     <td>
                         <select name="sks" id="sks">
                             <option value="">Pilih SKS</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="2" <?php echo set_select('sks', '2'); ?>>2</option>
+                            <option value="3" <?php echo set_select('sks', '3'); ?>>3</option>
+                            <option value="4" <?php echo set_select('sks', '4'); ?>>4</option>
                         </select>
-                        <a id="sksError" class="error"></a>
+                        <?php echo form_error('sks', '<span class="error">', '</span>'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -50,55 +50,3 @@
         </form>
     </center>
 </section>
-
-<script>
-    function validateForm() {
-        var kode = document.getElementById("kode").value;
-        var nama = document.getElementById("nama").value;
-        var sks = document.getElementById("sks").value;
-        var kodeError = document.getElementById("kodeError");
-        var namaError = document.getElementById("namaError");
-        var sksError = document.getElementById("sksError");
-
-        kodeError.style.color = "red";
-        kodeError.style.fontWeight = "700";
-
-        namaError.style.color = "red";
-        namaError.style.fontWeight = "700";
-
-        sksError.style.color = "red";
-        sksError.style.fontWeight = "700";
-
-        // Menghapus pesan error sebelumnya
-        kodeError.innerHTML = "";
-        namaError.innerHTML = "";
-        sksError.innerHTML = "";
-
-        // Validasi kode hanya mengandung huruf dan angka
-        var kodeRegex = /^[0-9]+$/;
-        if (kode === "") {
-            kodeError.innerHTML = "Harap isi Kode MTK!";
-            return false;
-        } else if (!kode.match(kodeRegex)) {
-            kodeError.innerHTML = "Kode MTK hanya boleh mengandung angka!";
-            return false;
-        }
-
-        // Validasi nama hanya mengandung huruf dan spasi
-        var namaRegex = /^[a-zA-Z\s]+$/;
-        if (nama === "") {
-            namaError.innerHTML = "Harap isi Nama MTK!";
-            return false;
-        } else if (!nama.match(namaRegex) || !nama.lenght < 4) {
-            namaError.innerHTML = "Nama MTK hanya boleh mengandung huruf dan spasi! dan karakter tidak boleh kurang dari 4!";
-            return false;
-        }
-
-        if (sks === "") {
-            sksError.innerHTML = "Harap pilih SKS!";
-            return false;
-        }
-
-        return true;
-    }
-</script>
